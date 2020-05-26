@@ -30,9 +30,8 @@ const WeatherCard = ({ temp, condition, country, city, icon }) => {
   const Card = styled.div`
     margin: 0 auto;
     background: ${bg};
-    width: 200px;
-    height: 240px;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;

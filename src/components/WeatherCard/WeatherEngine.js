@@ -4,8 +4,7 @@ import axios from "axios";
 
 import WeatherCard from "./component";
 
-function App() {
-  let location = "London";
+const WeatherEngine = ({ location }) => {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({
     temp: null,
@@ -41,7 +40,6 @@ function App() {
   useEffect(() => {
     getWheather(location);
   }, [location]);
-
   return (
     <div className="App">
       <WeatherCard
@@ -61,6 +59,6 @@ function App() {
       </form>
     </div>
   );
-}
+};
 
-export default App;
+export default WeatherEngine;
