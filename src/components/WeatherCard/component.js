@@ -4,6 +4,8 @@ import styled from "@emotion/styled";
 import Location from "./Location";
 import Icon from "./Icon";
 import Condition from "./Condition";
+import { motion } from "framer-motion";
+import Reel from "react-reel";
 
 const WeatherCard = ({ temp, condition, country, city, icon, getWheather }) => {
   let highColor = 0;
@@ -38,11 +40,13 @@ const WeatherCard = ({ temp, condition, country, city, icon, getWheather }) => {
     border-radius: 15px;
   `;
   return (
-    <Card>
-      <Location city={city} country={country} getWheather={getWheather} />
-      <Icon icon={icon} />
-      <Condition temp={temp} condition={condition} />
-    </Card>
+    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+      <Card>
+        <Location city={city} country={country} getWheather={getWheather} />
+        <Icon icon={icon} />
+        <Condition temp={temp} condition={condition} />
+      </Card>
+    </motion.div>
   );
 };
 
