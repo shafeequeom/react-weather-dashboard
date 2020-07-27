@@ -9,7 +9,7 @@ const Condition = ({ temp, condition }) => {
   `;
   const State = styled.h3`
     font-family: "Merriweather", sans-serif;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
   `;
 
   return (

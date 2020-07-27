@@ -5,7 +5,6 @@ import axios from "axios";
 import WeatherCard from "./component";
 
 const WeatherEngine = ({ location }) => {
-  const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({
     temp: null,
     city: null,
@@ -32,11 +31,6 @@ const WeatherEngine = ({ location }) => {
       });
   };
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    getWheather(query);
-  };
-
   useEffect(() => {
     getWheather(location);
   }, [location]);
@@ -48,15 +42,8 @@ const WeatherEngine = ({ location }) => {
         city={weather.city}
         country={weather.country}
         icon={weather.icon}
+        getWheather={getWheather}
       />
-      <form>
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button onClick={(e) => handleSearch(e)}>Search</button>
-      </form>
     </div>
   );
 };
