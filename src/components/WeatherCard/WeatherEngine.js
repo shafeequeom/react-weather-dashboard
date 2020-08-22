@@ -36,19 +36,23 @@ const WeatherEngine = ({ location }) => {
   useEffect(() => {
     getWheather(location);
   }, [location]);
-  return loading ? (
-    <div
-      style={{
-        display: "flex",
-        width: "200px",
-        height: "240px",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <BounceLoader />
-    </div>
-  ) : (
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          width: "200px",
+          height: "240px",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <BounceLoader />
+      </div>
+    );
+  }
+  return (
     <div className="App">
       <WeatherCard
         temp={weather.temp}

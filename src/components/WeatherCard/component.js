@@ -5,7 +5,6 @@ import Location from "./Location";
 import Icon from "./Icon";
 import Condition from "./Condition";
 import { motion } from "framer-motion";
-import Reel from "react-reel";
 
 const WeatherCard = ({ temp, condition, country, city, icon, getWheather }) => {
   let highColor = 0;
