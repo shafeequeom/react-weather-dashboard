@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "./logo.png";
 
 import { Container, Row, Col, Navbar, Jumbotron } from "react-bootstrap";
 
@@ -11,7 +12,7 @@ function App() {
         <Navbar.Brand href="#home">
           <img
             alt=""
-            src="/logo192.png"
+            src={Logo}
             width="30"
             height="30"
             className="d-inline-block align-top"
@@ -19,6 +20,7 @@ function App() {
           React Wheather
         </Navbar.Brand>
       </Navbar>
+
       <Jumbotron>
         <Container>
           <Row className="justify-content-md-center">
@@ -37,17 +39,19 @@ function App() {
           </Row>
         </Container>
       </Jumbotron>
-      <Row className="justify-content-md-center">
-        <Col md="auto">
-          <a href="https://www.weatherapi.com/" title="Free Weather API">
-            <img
-              src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
-              alt="Weather data by WeatherAPI.com"
-              border="0"
-            />
-          </a>
-        </Col>
-      </Row>
+      <Container fluid>
+        <Row className="justify-content-md-center ">
+          <Col md="auto">
+            <a href="https://www.weatherapi.com/" title="Free Weather API">
+              <img
+                src="//cdn.weatherapi.com/v4/images/weatherapi_logo.png"
+                alt="Weather data by WeatherAPI.com"
+                border="0"
+              />
+            </a>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 }
